@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Character counter</title>
+
+    <style>
+        .container {
+            max-width: 300px;
+            text-align: center;
+            margin: auto;
+        }
+
+        .counter {
+            margin-bottom: 16px;
+            margin-top: 16px;
+            font-size: larger;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Character counter</h2>
+        <h4>Type here:</h4>
+        <form action="#">
+            <textarea name="textarea" id="textarea" cols="40" rows="10"></textarea>
+        </form>
+        <div class="counter">0</div>
+        <button>reset</button>
+    </div>
+
+    <script>
+        const textarea = document.querySelector('textarea');
+        const counter = document.querySelector('.counter');
+        const resetButton = document.querySelector('button');
+
+        textarea.addEventListener('input', function(event) {
+            counter.textContent = event.target.value.length;
+        })
+
+        resetButton.addEventListener('click', function() {
+            textarea.value = '';
+            counter.textContent = 0;
+        })
+    </script>
+</body>
+</html>
