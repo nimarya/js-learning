@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Hello Maria!</p>
+
+    <ul>
+        <li>hi</li>
+        <li>there</li>
+        <li>maria</li>
+    </ul>
+
+    <ul>
+        <li id="elementli">new</li>
+        <li>list</li>
+        <li>test</li>
+    </ul>
+    <div>
+        <button id="read">read</button>
+        <button id="update">update</button>
+    </div>
+
+    <button>click here</button>
+    <!-- <script src="script3.js"></script> -->
+
+    <script>
+        const readButton = document.querySelector('#read');
+        const updateButton = document.querySelector('#update');
+        const liElement = document.querySelector('#elementli');
+
+        function readSomething() {
+            console.log('read something');
+        }
+        function updateSomething() {
+            liElement.textContent += 'updated';
+            console.log('update something');
+        }
+
+        readButton.addEventListener('click', readSomething);
+        updateButton.addEventListener('click', updateSomething);
+    </script>
+</body>
+</html>

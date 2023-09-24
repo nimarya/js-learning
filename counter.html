@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter</title>
+
+    <style>
+        .container {
+            max-width: 300px;
+            text-align: center;
+            margin: auto;
+        }
+
+        .counter {
+            margin-bottom: 16px;
+            font-size: larger;
+            font-weight: bold;
+        }
+
+        .button-container {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-bottom: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h3>Counter</h3>
+        <div class="counter">0</div>
+        <div class="button-container">
+            <button class="add-button">add</button>
+            <button class="subtract-button">subtract</button>
+            <button class="reset-button">reset</button>
+        </div>
+        <div class="button-container">
+            <button class="red-button">red</button>
+            <button class="green-button">green</button>
+        </div>
+    </div>
+
+    <script>
+        const counter = document.querySelector('.counter');
+        const addButton = document.querySelector('.add-button');
+        const subtractButton = document.querySelector('.subtract-button');
+        const resetButton = document.querySelector('.reset-button');
+        const redButton = document.querySelector('.red-button');
+        const greenButton = document.querySelector('.green-button');
+        let count = 0;
+
+        addButton.addEventListener('mousemove', function() {
+            count++;
+            counter.textContent = count;
+        })
+
+        subtractButton.addEventListener('mousemove', function() {
+            count--;
+            counter.textContent = count;
+        })
+
+        resetButton.addEventListener('click', function() {
+            count = 0;
+            counter.textContent = 0;
+        })
+
+        redButton.addEventListener('click', function() {
+            counter.style.color = 'red';
+        })
+
+        greenButton.addEventListener('click', function() {
+            counter.style.color = 'green';
+        })
+    </script>
+</body>
+</html>

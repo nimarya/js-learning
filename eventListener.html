@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>To-do list</h3>
+    <ul>
+        <li>to-do 1</li>
+        <button class="edit-todo">edit</button>
+        <li>to-do 2</li>
+        <button class="edit-todo">edit</button>
+        <li>to-do 3</li>
+        <button class="edit-todo">edit</button>
+    </ul>
+    <button class="clear-todos">delete</button>
+    <button class="uwu">uwu</button>
+
+    <script>
+        const clearButton = document.querySelector('.clear-todos');
+        const uwuButton = document.querySelector('.uwu');
+        const editButtons = document.querySelectorAll('.edit-todo');
+
+        function editTodo() {
+            console.log('edit todo');
+        }
+
+        function doUwu(event) {
+            console.log('UWU');
+            
+            // !! this allows to remove evetListener after one click -
+            // you can use this button only once
+            uwuButton.removeEventListener('click', doUwu);
+        }
+        
+        editButtons.forEach(editButton => {
+            editButton.addEventListener('click', editTodo);
+        })
+
+        uwuButton.addEventListener('click', doUwu);
+
+        // event listener on button click
+        clearButton.addEventListener('dblclick', function() {
+            console.log('the delete button was clicked');
+
+            // updating header
+            const header3 = document.querySelector('h3').textContent += ' updated';
+
+            // adding new li to ul
+            const li = document.createElement('li');
+            li.textContent = 'new to-do';
+            const ul = document.querySelector('ul');
+            ul.append(li);
+        });
+
+        // different events: click, dblclick, mouseenter, mouseleave, mousemove
+
+    </script>
+</body>
+</html>
