@@ -36,8 +36,8 @@
         const counter = document.querySelector('.counter');
         const resetButton = document.querySelector('button');
 
-        textarea.addEventListener('input', function(event) {
-            counter.textContent = event.target.value.length;
+        textarea.addEventListener('input', function() {
+            counter.textContent = textarea.value.length;
         })
 
         resetButton.addEventListener('click', function() {
